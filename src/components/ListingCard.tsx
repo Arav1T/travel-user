@@ -4,6 +4,8 @@ import { FaStar, FaMapMarkerAlt } from 'react-icons/fa';
 import React from 'react';
 
 const ListingCard = ({ listing }) => {
+  console.log("listing",listing);
+  
   return (
     <div className={`relative bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 ${listing.available ? 'hover:shadow-2xl hover:-translate-y-1' : 'opacity-70'}`}>
 
@@ -33,9 +35,9 @@ const CardContent = ({ listing }) => (
   <>
  
     <div className="relative">
-      {listing.images && listing.images.length > 0 ? (
+      {listing.imageUrl  ? (
         <img
-          src={listing.images[0]}
+          src={listing.imageUrl}
           alt={listing.name}
           className="w-full h-56 object-cover"
         />
