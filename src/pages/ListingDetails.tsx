@@ -287,7 +287,7 @@ const ListingDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="mb-4 rounded-lg overflow-hidden shadow-xl bg-white/20 backdrop-blur-lg">
             {/* Listing Image can be added here */}
-            {/* <img src={listing.images[0]} alt={listing.name} className="w-full h-96 object-cover" /> */}
+            <img src={listing.imageUrl} alt={listing.name} className="w-full h-96 object-cover" />
           </div>
 
           <div>
