@@ -273,13 +273,13 @@ import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firesto
 import { db } from '../firebase';
 import { toast } from 'react-hot-toast';
 import { FaCalendarAlt, FaMapMarkerAlt, FaMoneyBillWave } from 'react-icons/fa';
-
+import { Listing } from '../types/Listing';
 // Define types
-interface Listing {
-  name?: string;
-  address?: string;
-  images?: string[];
-}
+// interface Listing {
+//   name?: string;
+//   address?: string;
+//   images?: string[];
+// }
 
 interface Booking {
   id: string;
@@ -319,7 +319,7 @@ const Bookings: React.FC = () => {
           if (listingDoc.exists()) {
             booking.listing = listingDoc.data() as Listing;
           }
-
+          console.log("listing",booking)
           bookingsData.push(booking);
         }
 
@@ -366,7 +366,7 @@ const Bookings: React.FC = () => {
             <div key={booking.id} className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-all duration-300">
               <div className="h-48 overflow-hidden">
                 <img
-                  src={booking.listing?.images?.[0]}
+                  src={booking.listing?.imageUrl}
                   alt={booking.listing?.name}
                   className="w-full h-full object-cover"
                 />
