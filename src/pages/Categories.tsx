@@ -98,7 +98,7 @@
 
 
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import React, { JSX, useEffect, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../firebase';
 import ListingCard from '../components/ListingCard';
@@ -120,9 +120,9 @@ import type { Listing } from '../types/Listing';
 // }
 
 // Define route parameters
-interface RouteParams {
-  name?: string;
-}
+// interface RouteParams {
+//   name?: string;
+// }
 
 export default function Categories(): JSX.Element {
   const [listings, setListings] = useState<Listing[]>([]);

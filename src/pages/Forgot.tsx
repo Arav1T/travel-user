@@ -36,7 +36,7 @@
 // }
 
 
-import React, { JSX, useRef } from 'react';
+import  { JSX, useRef } from 'react';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
