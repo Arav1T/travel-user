@@ -119,7 +119,7 @@
 // }
 
 import { collection, getDocs } from 'firebase/firestore';
-import React, { JSX, useEffect, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { motion } from 'framer-motion';
 import ListingCard from '../components/ListingCard';

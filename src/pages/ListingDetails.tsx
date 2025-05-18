@@ -526,7 +526,9 @@ const ListingDetails: React.FC = () => {
                   <label className="block mb-1 font-medium">Check-in</label>
                   <DatePicker
                     selected={startDate}
-                    onChange={(date: Date) => {setStartDate(date)}}
+                    onChange={(date: Date | null) => {
+    if (date) setStartDate(date);
+  }}
                     minDate={new Date()}
                     className="w-full p-3 rounded-lg bg-gray-700 text-white"
                     placeholderText="Select date"
@@ -536,7 +538,7 @@ const ListingDetails: React.FC = () => {
                   <label className="block mb-1 font-medium">Check-out</label>
                   <DatePicker
                     selected={endDate}
-                    onChange={(date: Date) => setEndDate(date)}
+                    onChange={(date: Date | null) => setEndDate(date)}
                     minDate={startDate || new Date()}
                     className="w-full p-3 rounded-lg bg-gray-700 text-white"
                     placeholderText="Select date"
