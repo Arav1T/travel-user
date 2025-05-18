@@ -267,32 +267,29 @@ import CategorySlider from '../components/CategorySlider';
 import Slider from 'react-slick';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-
+import { Listing } from '../types/Listing';
+import {Category} from '../types/Category'
 // Types
-interface Listing {
-  id: string;
-  name: string;
-  city: string;
-  price: number;
-  available: boolean;
-  availablets?: any;
-  images?: string[];
-  [key: string]: any;
-}
+// interface Listing {
+//   id: string;
+//   name: string;
+//   city: string;
+//   price: number;
+//   available: boolean;
+//   availablets?: any;
+//   images?: string[];
+//   [key: string]: any;
+// }
 
-interface Category {
-  id: string | number;
-  name: string;
-  image: string;
-}
+
 
 const Home: React.FC = () => {
   const [listings, setListings] = useState<Listing[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [categories, setCategories] = useState<Category[]>([
-    { id: 1, name: 'Villas', image: '/villa.jpg' },
-    { id: 2, name: 'Apartments', image: '/apartment.jpg' },
-    { id: 3, name: 'Houseboats', image: '/houseboat.jpg' },
+    { id: "1", name: 'Villas', image: '/villa.jpg' },
+    { id: "2", name: 'Apartments', image: '/apartment.jpg' },
+    { id: "3", name: 'Houseboats', image: '/houseboat.jpg' },
   ]);
 
   useEffect(() => {
@@ -309,10 +306,14 @@ const Home: React.FC = () => {
         setListings(listingsData);
 
         const categorySnapshot = await getDocs(collection(db, 'categories'));
-        const categoriesData: Category[] = categorySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as Category[];
+        const categoriesData: Category[] = categorySnapshot.docs.map(doc => {
+  const data = doc.data();
+  return {
+    ...data,
+    id: doc.id, // ensures id is string
+  } as Category;
+});
+
 
         setCategories(prev => [...prev, ...categoriesData]);
       } catch (error) {
