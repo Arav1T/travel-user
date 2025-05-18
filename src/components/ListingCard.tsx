@@ -76,17 +76,17 @@
 import { Link } from 'react-router-dom';
 import { FaStar, FaMapMarkerAlt } from 'react-icons/fa';
 import React from 'react';
-
+import type { Listing } from '../types/Listing';
 // Define the shape of listing data
-interface Listing {
-  id: string;
-  name: string;
-  price: number;
-  city: string;
-  imageUrl?: string;
-  rating?: number;
-  available: boolean;
-}
+// interface Listing {
+//   id: string;
+//   name: string;
+//   price: number;
+//   city: string;
+//   imageUrl?: string;
+//   rating?: number;
+//   available: boolean;
+// }
 
 interface ListingCardProps {
   listing: Listing;

@@ -102,22 +102,22 @@ import React, { JSX, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../firebase';
 import ListingCard from '../components/ListingCard';
-
+import type { Listing } from '../types/Listing';
 // Define the shape of a listing
-interface Listing {
-  id: string;
-  title?: string;
-  description?: string;
-  price?: number;
-  category?: string;
-  address?: string;
-  images?: string[];
-  name?: string;  // Ensure these fields are included
-  city?: string;
-  available?: boolean; // Add the available property here
-  availablets?: any;  // Assuming this is an array or another type
-  [key: string]: any;  // To support dynamic Firebase fields
-}
+// interface Listing {
+//   id: string;
+//   title?: string;
+//   description?: string;
+//   price?: number;
+//   category?: string;
+//   address?: string;
+//   images?: string[];
+//   name?: string;  // Ensure these fields are included
+//   city?: string;
+//   available?: boolean; // Add the available property here
+//   availablets?: any;  // Assuming this is an array or another type
+//   [key: string]: any;  // To support dynamic Firebase fields
+// }
 
 // Define route parameters
 interface RouteParams {
