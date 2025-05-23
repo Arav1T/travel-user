@@ -1,3 +1,17 @@
+To get started with this project, you need to:
+
+Configure Firebase using your project credentials (API key, Auth domain, Project ID, etc.).
+
+# Firebase Configuration
+VITE_APP_FIREBASE_API_KEY=your_firebase_api_key
+VITE_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_APP_FIREBASE_PROJECT_ID=your_project_id
+VITE_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_APP_FIREBASE_APP_ID=your_app_id
+VITE_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id
+
+#This project was initially developed in JavaScript. During the migration to TypeScript, the original JavaScript code was commented out across various components. These commented sections have been retained temporarily for reference and comparison purposes.
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
